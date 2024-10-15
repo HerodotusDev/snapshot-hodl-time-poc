@@ -2,10 +2,12 @@
 name = "custom_module"
 version = "0.1.0"
 edition = "2023_11"
+cairo-version = "2.8.0"
 
 [dependencies]
-starknet = "2.6.3"
-hdp_cairo = { git = "https://github.com/HerodotusDev/hdp-cairo.git" }
+starknet = "2.8.0"
+cairo_test = "2.8.0"
+hdp_cairo = { git = "https://github.com/HerodotusDev/hdp-cairo.git", branch = "cairo0_cairo1_transaction_syscall_support" }
 
 [[target.starknet-contract]]
 sierra = true

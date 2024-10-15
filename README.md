@@ -1,6 +1,4 @@
-# HDP Module Template
-
-This is a public template to quickly start your HDP (Herodotus Data Processor) custom module development. For more information, please refer to the [HDP Docs](https://docs.herodotus.dev/herodotus-docs/developers/data-processor).
+# Snapshot <> Herodotus DP -- Proof of Concept
 
 ## 1. Build
 
@@ -48,6 +46,8 @@ Now, with this custom module, you can submit a request to the HDP:
 
 Provide the correct program hash from the program registry. Input data should be the input for the `pub fn main()` function.
 
+Note that values belows are examples and should be replaced with the correct input values.
+
 ```console
 curl --location 'https://hdp.api.herodotus.cloud/submit-batch-query?apiKey={API_KEY}' \
 --header 'Content-Type: application/json' \
@@ -82,15 +82,4 @@ curl --location 'https://hdp.api.herodotus.cloud/submit-batch-query?apiKey={API_
     }
   ]
 }'
-```
-
-## Versions
-
-Here are the current versions:
-
-```console
-❯ scarb --version
-scarb 2.6.5 (d49f54394 2024-06-11)
-cairo: 2.6.4 (https://crates.io/crates/cairo-lang-compiler/2.6.4)
-sierra: 1.5.0
 ```
