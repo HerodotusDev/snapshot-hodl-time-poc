@@ -30,7 +30,7 @@ mod contract {
             );
 
         assert!(
-            start_block_timestamp < end_block_timestamp, "End block must come after start block"
+            start_block_timestamp <= end_block_timestamp, "End block must come after start block"
         );
 
         let holding_period_in_seconds = end_block_timestamp - start_block_timestamp;
@@ -127,7 +127,7 @@ mod contract {
             l1_voter_address,
             l1_voting_token_address,
             l1_voting_token_balance_slot,
-            l1_end_block_number
+            l1_start_block_number
         );
         let (missing_txns_count, nonce_at_start_block) = get_missing_txns_count(
             @hdp,
