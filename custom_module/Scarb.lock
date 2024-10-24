@@ -11,4 +11,4 @@ dependencies = [
 [[package]]
 name = "hdp_cairo"
 version = "0.1.0"
-source = "git+https://github.com/HerodotusDev/hdp-cairo.git?branch=cairo0_cairo1_transaction_syscall_support#92151d9afa67e228c3c254e84bcd86aff2675e59"
+source = "git+https://github.com/HerodotusDev/hdp-cairo.git?branch=hdp_neo#58f7c4faf7554663a009f8bd70d1e106edc6dbad"
