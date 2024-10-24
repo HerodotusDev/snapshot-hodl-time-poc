@@ -80,6 +80,9 @@ mod contract {
                 chain_id: l1_chain_id, block_number: l1_end_block_number, address: l1_voter_address
             }
         );
+        if nonce_at_start_block == nonce_at_end_block {
+            return (0, nonce_at_start_block);
+        }
         assert!(nonce_at_end_block >= 1, "Nonce at end block must be greater than 0");
         let missing_txns_count = nonce_at_end_block - nonce_at_start_block - 1;
         (missing_txns_count, nonce_at_start_block)
@@ -129,6 +132,19 @@ mod contract {
             l1_voting_token_balance_slot,
             l1_start_block_number
         );
+        let token_balance_at_end = get_token_balance(
+            @hdp,
+            l1_chain_id.try_into().unwrap(),
+            l1_voter_address,
+            l1_voting_token_address,
+            l1_voting_token_balance_slot,
+            l1_end_block_number
+        );
+        assert!(
+            token_balance_at_end >= token_balance_at_start,
+            "Token balance at end must be greater than or equal to token balance at start"
+        );
+
         let (missing_txns_count, nonce_at_start_block) = get_missing_txns_count(
             @hdp,
             l1_chain_id.try_into().unwrap(),
